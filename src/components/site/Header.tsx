@@ -40,7 +40,7 @@ export function Header() {
               key={item.to}
               to={item.to}
               className="link-underline text-[0.8125rem] tracking-wide opacity-80 transition-opacity hover:opacity-100"
-              activeProps={{ className: "!opacity-100 !bg-[length:100%_1px]" }}
+              activeProps={{ className: "opacity-100! bg-[length:100%_1px]!" }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
