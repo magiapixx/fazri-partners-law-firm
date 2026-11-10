@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { practices } from "@/content/site";
 
 export function ConsultationForm({ onDone }: { onDone?: () => void }) {
-  const [matter, setMatter] = useState(practices[0].title);
+  const [matter, setMatter] = useState(practices[0]?.title ?? "");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

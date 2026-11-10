@@ -200,9 +200,9 @@ function About() {
       <section className="bg-ink text-ink-foreground">
         <div className="container-site py-24 text-center md:py-32">
           <p className="eyebrow text-ink-muted">Client voice</p>
-          <blockquote className="display-md mx-auto mt-8 max-w-4xl">“{testimonials[1].quote}”</blockquote>
+          <blockquote className="display-md mx-auto mt-8 max-w-4xl">“{testimonials[1]!.quote}”</blockquote>
           <p className="mt-8 text-sm text-ink-muted">
-            {testimonials[1].name} — {testimonials[1].company}
+            {testimonials[1]!.name} — {testimonials[1]!.company}
           </p>
           <ConsultationDialog>
             <Button variant="outlineLight" size="lg" className="mt-10">

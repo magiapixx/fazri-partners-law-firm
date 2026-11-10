@@ -30,7 +30,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [featured, ...rest] = insights;
+  const featured = insights[0]!;
+  const rest = insights.slice(1);
   return (
     <>
       <PageHero
@@ -150,9 +151,9 @@ function Index() {
       <section className="grid bg-primary text-primary-foreground lg:grid-cols-2">
         <div className="flex flex-col justify-center p-8 py-20 md:p-16 lg:p-24">
           <Quote className="h-10 w-10 text-accent" />
-          <blockquote className="display-md mt-8">“{testimonials[0].quote}”</blockquote>
+          <blockquote className="display-md mt-8">“{testimonials[0]!.quote}”</blockquote>
           <p className="mt-8 text-sm">
-            {testimonials[0].name} <span className="opacity-60">— {testimonials[0].company}</span>
+            {testimonials[0]!.name} <span className="opacity-60">— {testimonials[0]!.company}</span>
           </p>
         </div>
         <div className="relative min-h-[480px]">
