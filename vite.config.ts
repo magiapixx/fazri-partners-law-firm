@@ -11,9 +11,7 @@ export default defineConfig(({ command }) => ({
     }),
     react(),
     tailwindcss(),
-    ...(command === "build"
-      ? [nitro({ preset: "cloudflare-module", output: { dir: "dist" } })]
-      : []),
+    ...(command === "build" ? [nitro({ preset: "vercel" })] : []),
   ],
   resolve: {
     tsconfigPaths: true,
