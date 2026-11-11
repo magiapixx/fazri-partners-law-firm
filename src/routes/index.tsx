@@ -11,13 +11,13 @@ import { caseStudies, insights, practices, stats, testimonials } from "@/content
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fazri & Partners — Nasihat Hukum dengan Keyakinan" },
+      { title: "Fazri & Partners — Law Firm dengan Win Rate 90%" },
       {
         name: "description",
         content:
           "Firma hukum Jakarta yang mendampingi perusahaan, investor, dan keluarga dalam perkara korporasi, sengketa, keuangan, dan properti.",
       },
-      { property: "og:title", content: "Fazri & Partners — Nasihat Hukum dengan Keyakinan" },
+      { property: "og:title", content: "Fazri & Partners — Law Firm dengan Win Rate 90%" },
       {
         property: "og:description",
         content:
@@ -41,7 +41,7 @@ function Index() {
         eyebrow="Jakarta · Since 2004"
         title={
           <>
-            Nasihat hukum dengan <span className="italic">keyakinan.</span>
+            Law firm dengan <span className="italic">win rate 90%</span> di meja hukum.
           </>
         }
       >
