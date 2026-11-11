@@ -8,29 +8,28 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { Toaster } from "@/components/ui/sonner";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-ink px-4 text-ink-foreground">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold">404</h1>
-        <h2 className="mt-4 text-xl font-semibold">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold">Halaman tidak ditemukan</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          Halaman yang Anda cari tidak tersedia atau telah dipindahkan.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Kembali ke beranda
           </Link>
         </div>
       </div>
@@ -41,18 +40,15 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-ink px-4 text-ink-foreground">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Halaman ini gagal dimuat
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Terjadi kendala. Silakan coba muat ulang halaman atau kembali ke beranda.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -62,13 +58,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Coba lagi
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Kembali ke beranda
           </a>
         </div>
       </div>
@@ -84,16 +80,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Fazri & Partners — Law Firm in Jakarta" },
+      { title: "Fazri & Partners — Firma Hukum di Jakarta" },
       {
         name: "description",
-        content: "Fazri & Partners is a Jakarta law firm advising on corporate, disputes, finance and real estate.",
+        content:
+          "Fazri & Partners adalah firma hukum di Jakarta yang memberikan nasihat di bidang korporasi, sengketa, keuangan, dan properti.",
       },
       { name: "author", content: "Fazri & Partners" },
-      { property: "og:title", content: "Fazri & Partners — Law Firm in Jakarta" },
+      { property: "og:title", content: "Fazri & Partners — Firma Hukum di Jakarta" },
       {
         property: "og:description",
-        content: "Fazri & Partners is a Jakarta law firm advising on corporate, disputes, finance and real estate.",
+        content:
+          "Fazri & Partners adalah firma hukum di Jakarta yang memberikan nasihat di bidang korporasi, sengketa, keuangan, dan properti.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -120,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>

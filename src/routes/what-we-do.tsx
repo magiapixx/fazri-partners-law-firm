@@ -5,23 +5,29 @@ import glass from "@/assets/practice-glass.jpg";
 import { ConsultationDialog } from "@/components/site/ConsultationDialog";
 import { CtaBand } from "@/components/site/CtaBand";
 import { PageHero, SectionLabel } from "@/components/site/PageHero";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { expertise, practices } from "@/content/site";
 
 export const Route = createFileRoute("/what-we-do")({
   head: () => ({
     meta: [
-      { title: "What We Do — Fazri & Partners" },
+      { title: "Layanan Kami — Fazri & Partners" },
       {
         name: "description",
         content:
-          "Corporate & M&A, litigation, banking & finance and real estate practices at Fazri & Partners, Jakarta.",
+          "Layanan korporasi & M&A, litigasi, perbankan & keuangan, serta properti di Fazri & Partners, Jakarta.",
       },
-      { property: "og:title", content: "What We Do — Fazri & Partners" },
+      { property: "og:title", content: "Layanan Kami — Fazri & Partners" },
       {
         property: "og:description",
-        content: "Corporate & M&A, litigation, banking & finance and real estate legal services in Indonesia.",
+        content:
+          "Layanan hukum korporasi & M&A, litigasi, perbankan & keuangan, serta properti di Indonesia.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -31,10 +37,26 @@ export const Route = createFileRoute("/what-we-do")({
 });
 
 const approach = [
-  { n: "01", title: "Listen & assess", text: "We start with your objectives, risks and timeline — not with the law." },
-  { n: "02", title: "Strategise", text: "A clear plan with options, costs and likely outcomes, agreed before work begins." },
-  { n: "03", title: "Execute", text: "Partner-led delivery with a lean, accountable team and regular, plain-language updates." },
-  { n: "04", title: "Stay alongside", text: "After closing or judgment, we remain your counsel for what comes next." },
+  {
+    n: "01",
+    title: "Mendengar & mengkaji",
+    text: "Kami mulai dengan memahami tujuan, risiko, dan tenggat Anda — bukan langsung membahas hukum.",
+  },
+  {
+    n: "02",
+    title: "Menyusun strategi",
+    text: "Rencana yang jelas, lengkap dengan pilihan, biaya, dan kemungkinan hasil, disepakati sebelum pekerjaan dimulai.",
+  },
+  {
+    n: "03",
+    title: "Melaksanakan",
+    text: "Penanganan langsung oleh rekan dengan tim yang sigap dan bertanggung jawab, disertai kabar rutin dalam bahasa yang mudah dipahami.",
+  },
+  {
+    n: "04",
+    title: "Terus mendampingi",
+    text: "Setelah transaksi atau putusan, kami tetap menjadi penasihat Anda untuk langkah berikutnya.",
+  },
 ];
 
 function WhatWeDo() {
@@ -42,16 +64,16 @@ function WhatWeDo() {
     <>
       <PageHero
         image={glass}
-        eyebrow="What we do"
+        eyebrow="Layanan Kami"
         title={
           <>
-            Focused practices, <span className="italic">one standard.</span>
+            Bidang layanan terarah, <span className="italic">satu standar.</span>
           </>
         }
       >
         <p>
-          From boardroom to courtroom, we bring together specialists around each client's matter — so you receive
-          joined-up advice, not departmental opinions.
+          Dari ruang rapat hingga ruang sidang, kami menghimpun para spesialis sesuai kebutuhan
+          setiap klien — agar Anda memperoleh nasihat terpadu, bukan pandangan yang terpisah-pisah.
         </p>
       </PageHero>
 
@@ -73,12 +95,17 @@ function WhatWeDo() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="eyebrow text-muted-foreground">Practice 0{i + 1}</span>
+              <span className="eyebrow text-muted-foreground">Layanan 0{i + 1}</span>
               <h2 className="display-lg mt-5">{p.title}</h2>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">{p.summary}</p>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+                {p.summary}
+              </p>
               <ul className="mt-10 border-t border-border">
                 {p.services.map((s) => (
-                  <li key={s} className="flex items-center justify-between border-b border-border py-4 text-sm">
+                  <li
+                    key={s}
+                    className="flex items-center justify-between border-b border-border py-4 text-sm"
+                  >
                     {s}
                     <ArrowUpRight className="h-4 w-4 text-muted-foreground" />
                   </li>
@@ -92,9 +119,9 @@ function WhatWeDo() {
       <section className="bg-secondary">
         <div className="container-site py-24 md:py-32">
           <div className="text-center">
-            <SectionLabel>Overview</SectionLabel>
+            <SectionLabel>Gambaran Umum</SectionLabel>
             <h2 className="display-lg mx-auto mt-6 max-w-2xl">
-              Overview &amp; <span className="italic">Expertise</span>
+              Gambaran Umum &amp; <span className="italic">Keahlian</span>
             </h2>
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-3">
@@ -109,8 +136,8 @@ function WhatWeDo() {
                         <Plus className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 [[data-state=open]_&]:rotate-45" />
                       </AccordionTrigger>
                       <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
-                        Practical, commercially minded advice on {item.toLowerCase()} — delivered by lawyers who know
-                        the regulators and the market.
+                        Nasihat praktis dan berorientasi bisnis mengenai {item.toLowerCase()} —
+                        diberikan oleh advokat yang memahami regulator dan kondisi pasar.
                       </AccordionContent>
                     </AccordionItem>
                   ))}
@@ -125,14 +152,14 @@ function WhatWeDo() {
         <div className="container-site py-24 md:py-32">
           <div className="grid gap-8 md:grid-cols-2 md:items-end">
             <div>
-              <p className="eyebrow text-ink-muted">Our approach</p>
+              <p className="eyebrow text-ink-muted">Pendekatan Kami</p>
               <h2 className="display-lg mt-6">
-                How we <span className="italic">work with you.</span>
+                Cara kami <span className="italic">bekerja bersama Anda.</span>
               </h2>
             </div>
             <ConsultationDialog>
               <Button variant="hero" size="lg" className="w-fit md:justify-self-end">
-                Start a conversation <ArrowUpRight />
+                Mulai percakapan <ArrowUpRight />
               </Button>
             </ConsultationDialog>
           </div>

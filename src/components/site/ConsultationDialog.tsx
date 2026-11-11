@@ -22,8 +22,8 @@ export function ConsultationForm({ onDone }: { onDone?: () => void }) {
     e.preventDefault();
     const form = e.currentTarget;
     const name = String(new FormData(form).get("name") ?? "").trim();
-    toast.success(`Thank you${name ? `, ${name}` : ""}.`, {
-      description: "A member of our team will contact you within one business day.",
+    toast.success(`Terima kasih${name ? `, ${name}` : ""}.`, {
+      description: "Tim kami akan menghubungi Anda dalam satu hari kerja.",
     });
     form.reset();
     onDone?.();
@@ -33,20 +33,27 @@ export function ConsultationForm({ onDone }: { onDone?: () => void }) {
     <form onSubmit={handleSubmit} className="grid gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="grid gap-2">
-          <Label htmlFor="c-name">Full name</Label>
+          <Label htmlFor="c-name">Nama lengkap</Label>
           <Input id="c-name" name="name" required maxLength={100} className="h-11 rounded-sm" />
         </div>
         <div className="grid gap-2">
           <Label htmlFor="c-email">Email</Label>
-          <Input id="c-email" name="email" type="email" required maxLength={255} className="h-11 rounded-sm" />
+          <Input
+            id="c-email"
+            name="email"
+            type="email"
+            required
+            maxLength={255}
+            className="h-11 rounded-sm"
+          />
         </div>
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="c-company">Company (optional)</Label>
+        <Label htmlFor="c-company">Perusahaan (opsional)</Label>
         <Input id="c-company" name="company" maxLength={120} className="h-11 rounded-sm" />
       </div>
       <fieldset className="grid gap-2">
-        <legend className="mb-2 text-sm font-medium">Area of matter</legend>
+        <legend className="mb-2 text-sm font-medium">Bidang yang ingin dikonsultasikan</legend>
         <div className="flex flex-wrap gap-2">
           {practices.map((p) => (
             <button
@@ -67,14 +74,22 @@ export function ConsultationForm({ onDone }: { onDone?: () => void }) {
         <input type="hidden" name="matter" value={matter} />
       </fieldset>
       <div className="grid gap-2">
-        <Label htmlFor="c-message">How can we help?</Label>
-        <Textarea id="c-message" name="message" required maxLength={2000} rows={4} className="rounded-sm" />
+        <Label htmlFor="c-message">Apa yang dapat kami bantu?</Label>
+        <Textarea
+          id="c-message"
+          name="message"
+          required
+          maxLength={2000}
+          rows={4}
+          className="rounded-sm"
+        />
       </div>
       <Button type="submit" variant="ink" size="lg" className="w-full">
-        Request Consultation
+        Minta Konsultasi
       </Button>
       <p className="text-xs text-muted-foreground">
-        Your enquiry is confidential. Submitting this form does not create a lawyer–client relationship.
+        Pertanyaan Anda bersifat rahasia. Pengiriman formulir ini tidak serta-merta membentuk
+        hubungan advokat dan klien.
       </p>
     </form>
   );
@@ -87,10 +102,13 @@ export function ConsultationDialog({ children }: { children: ReactNode }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-h-[90vh] overflow-y-auto rounded-sm sm:max-w-xl">
         <DialogHeader>
-          <p className="eyebrow text-muted-foreground">Private consultation</p>
-          <DialogTitle className="font-display text-3xl font-normal">Speak with a partner</DialogTitle>
+          <p className="eyebrow text-muted-foreground">Konsultasi pribadi</p>
+          <DialogTitle className="font-display text-3xl font-normal">
+            Berkonsultasi dengan rekan kami
+          </DialogTitle>
           <DialogDescription>
-            Tell us briefly about your matter. We respond to every enquiry within one business day.
+            Ceritakan secara singkat kebutuhan Anda. Kami akan merespons setiap pertanyaan dalam
+            satu hari kerja.
           </DialogDescription>
         </DialogHeader>
         <ConsultationForm onDone={() => setOpen(false)} />

@@ -11,18 +11,18 @@ export function Footer() {
       <div className="container-site pt-20 pb-10">
         <div className="grid gap-8 border-b border-ink-border pb-14 md:grid-cols-[1fr_auto] md:items-end">
           <h2 className="display-lg max-w-2xl">
-            Counsel with <span className="italic">conviction.</span>
+            Nasihat hukum dengan <span className="italic">keyakinan.</span>
           </h2>
           <ConsultationDialog>
             <Button variant="hero" size="lg" className="w-fit">
-              Partner With Us <ArrowUpRight />
+              Percayakan kepada Kami <ArrowUpRight />
             </Button>
           </ConsultationDialog>
         </div>
 
         <div className="grid grid-cols-2 gap-10 py-14 md:grid-cols-4">
           <div>
-            <p className="eyebrow mb-5 text-ink-muted">Firm</p>
+            <p className="eyebrow mb-5 text-ink-muted">Firma</p>
             <ul className="space-y-3 text-sm">
               {navItems.map((n) => (
                 <li key={n.to}>
@@ -34,7 +34,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-5 text-ink-muted">Practices</p>
+            <p className="eyebrow mb-5 text-ink-muted">Layanan</p>
             <ul className="space-y-3 text-sm">
               {practices.map((p) => (
                 <li key={p.slug}>
@@ -46,7 +46,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-5 text-ink-muted">Contact</p>
+            <p className="eyebrow mb-5 text-ink-muted">Kontak</p>
             <ul className="space-y-3 text-sm">
               <li>
                 <a href={`mailto:${firm.email}`} className="link-underline break-all">
@@ -59,14 +59,19 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="link-underline">
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link-underline"
+                >
                   LinkedIn
                 </a>
               </li>
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-5 text-ink-muted">Office</p>
+            <p className="eyebrow mb-5 text-ink-muted">Kantor</p>
             <p className="text-sm leading-relaxed text-ink-muted">{firm.address}</p>
           </div>
         </div>
@@ -75,7 +80,9 @@ export function Footer() {
           <p className="font-display text-[clamp(3rem,11vw,9rem)] leading-[0.85] tracking-tight">
             Fazri <span className="italic">&amp;</span> Partners
           </p>
-          <p className="text-xs text-ink-muted">© {new Date().getFullYear()} Fazri &amp; Partners. All rights reserved.</p>
+          <p className="text-xs text-ink-muted">
+            © {new Date().getFullYear()} Fazri &amp; Partners. Hak cipta dilindungi.
+          </p>
         </div>
       </div>
     </footer>

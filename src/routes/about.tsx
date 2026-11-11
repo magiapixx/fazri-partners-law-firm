@@ -12,15 +12,17 @@ import { stats, team, testimonials } from "@/content/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Fazri & Partners" },
+      { title: "Tentang Kami — Fazri & Partners" },
       {
         name: "description",
-        content: "Meet Fazri & Partners: an independent Jakarta law firm led by partners, founded in 2004.",
+        content:
+          "Kenali Fazri & Partners, firma hukum independen di Jakarta yang dipimpin para rekan dan berdiri sejak 2004.",
       },
-      { property: "og:title", content: "About — Fazri & Partners" },
+      { property: "og:title", content: "Tentang Kami — Fazri & Partners" },
       {
         property: "og:description",
-        content: "An independent Jakarta law firm led by partners, founded in 2004.",
+        content:
+          "Firma hukum independen di Jakarta yang dipimpin para rekan dan berdiri sejak 2004.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -32,27 +34,42 @@ export const Route = createFileRoute("/about")({
 const values = [
   {
     n: "01",
-    title: "Partner-led, always",
-    text: "Every client works directly with a partner. Seniority isn't delegated away once the mandate is signed.",
+    title: "Selalu dipimpin rekan",
+    text: "Setiap klien bekerja langsung dengan rekan firma. Keterlibatan senior tetap terjaga sejak penugasan dimulai.",
   },
   {
     n: "02",
-    title: "Clarity over complexity",
-    text: "We translate law into decisions. Our advice is concise, candid and built around what you need to do next.",
+    title: "Kejelasan, bukan kerumitan",
+    text: "Kami menerjemahkan hukum menjadi langkah nyata. Nasihat kami ringkas, terbuka, dan berfokus pada tindakan selanjutnya.",
   },
   {
     n: "03",
-    title: "Integrity without exception",
-    text: "We decline work that conflicts with our standards. Our reputation — and yours — depends on it.",
+    title: "Integritas tanpa kompromi",
+    text: "Kami menolak pekerjaan yang bertentangan dengan standar kami. Reputasi kami — dan Anda — bergantung padanya.",
   },
 ];
 
 const milestones = [
-  { year: "2004", text: "Fazri Ramadhan founds the firm with three lawyers in Kuningan, Jakarta." },
-  { year: "2011", text: "Disputes practice launched; first BANI award secured for a national contractor." },
-  { year: "2017", text: "Banking & Finance group formed, including a dedicated Islamic finance desk." },
-  { year: "2022", text: "Moved to Sequis Tower; team grows past 50 lawyers and specialists." },
-  { year: "2026", text: "Named among Indonesia's leading independent firms for corporate and disputes work." },
+  {
+    year: "2004",
+    text: "Fazri Ramadhan mendirikan firma bersama tiga advokat di Kuningan, Jakarta.",
+  },
+  {
+    year: "2011",
+    text: "Praktik sengketa dibuka; putusan BANI pertama berhasil diperoleh untuk kontraktor nasional.",
+  },
+  {
+    year: "2017",
+    text: "Kelompok Perbankan & Keuangan dibentuk, termasuk tim khusus keuangan syariah.",
+  },
+  {
+    year: "2022",
+    text: "Pindah ke Sequis Tower; jumlah advokat dan spesialis melampaui 50 orang.",
+  },
+  {
+    year: "2026",
+    text: "Diakui sebagai salah satu firma independen terkemuka di Indonesia untuk praktik korporasi dan sengketa.",
+  },
 ];
 
 function About() {
@@ -60,36 +77,40 @@ function About() {
     <>
       <PageHero
         image={skyline}
-        eyebrow="About the firm"
+        eyebrow="Tentang Firma"
         title={
           <>
-            Built on trust, <span className="italic">earned over decades.</span>
+            Berlandaskan kepercayaan, <span className="italic">tumbuh selama puluhan tahun.</span>
           </>
         }
       >
-        <p>An independent Indonesian firm, founded in Jakarta in 2004 and shaped by the clients who stayed with us.</p>
+        <p>
+          Firma hukum independen Indonesia yang berdiri di Jakarta pada 2004 dan tumbuh bersama
+          klien yang terus mempercayai kami.
+        </p>
       </PageHero>
 
       <section className="container-site grid gap-12 py-24 md:py-32 lg:grid-cols-2 lg:gap-20">
         <div>
-          <SectionLabel index="01">Our Story</SectionLabel>
+          <SectionLabel index="01">Kisah Kami</SectionLabel>
           <h2 className="display-lg mt-6">
-            Empowering clients with <span className="italic">considered counsel.</span>
+            Mendampingi klien dengan <span className="italic">nasihat yang matang.</span>
           </h2>
         </div>
         <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
           <p className="lede text-foreground">
-            Fazri &amp; Partners began with a simple conviction: that the best legal advice is personal, precise and
-            commercially grounded.
+            Fazri &amp; Partners berawal dari keyakinan sederhana: nasihat hukum terbaik bersifat
+            personal, tepat, dan berpijak pada pertimbangan bisnis.
           </p>
           <p>
-            Two decades later that conviction still guides us. We have grown into a firm of more than sixty lawyers
-            and specialists, yet we remain deliberately independent — free to put our clients' interests ahead of any
-            network or referral obligation.
+            Dua dekade kemudian, keyakinan itu tetap menjadi pedoman kami. Kini kami memiliki lebih
+            dari enam puluh advokat dan spesialis, namun tetap independen — mengutamakan kepentingan
+            klien di atas jaringan atau kewajiban rujukan mana pun.
           </p>
           <p>
-            Our clients include multinational corporations entering Indonesia, national champions expanding abroad,
-            financial institutions, state-owned enterprises and families safeguarding what they have built.
+            Klien kami mencakup perusahaan multinasional yang masuk ke Indonesia, perusahaan
+            nasional yang berekspansi ke luar negeri, lembaga keuangan, badan usaha milik negara,
+            serta keluarga yang menjaga hasil kerja mereka.
           </p>
         </div>
       </section>
@@ -98,7 +119,7 @@ function About() {
         <div className="relative aspect-[16/9] overflow-hidden rounded-sm md:aspect-[21/9]">
           <img
             src={boardroom}
-            alt="Partners of Fazri & Partners reviewing documents"
+            alt="Para rekan Fazri & Partners menelaah dokumen"
             loading="lazy"
             width={1600}
             height={1072}
@@ -107,7 +128,10 @@ function About() {
         </div>
         <dl className="grid grid-cols-2 border-b border-border md:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="border-border py-10 pr-6 md:border-r md:pl-6 md:first:pl-0 md:last:border-r-0">
+            <div
+              key={s.label}
+              className="border-border py-10 pr-6 md:border-r md:pl-6 md:first:pl-0 md:last:border-r-0"
+            >
               <dd className="font-display text-4xl md:text-5xl">{s.value}</dd>
               <dt className="mt-2 text-sm text-muted-foreground">{s.label}</dt>
             </div>
@@ -116,13 +140,16 @@ function About() {
       </section>
 
       <section className="container-site py-24 md:py-32">
-        <SectionLabel index="02">Our Values</SectionLabel>
+        <SectionLabel index="02">Nilai-Nilai Kami</SectionLabel>
         <h2 className="display-lg mt-6 max-w-2xl">
-          What guides <span className="italic">every mandate.</span>
+          Pedoman dalam <span className="italic">setiap penugasan.</span>
         </h2>
         <div className="mt-14 grid gap-4 md:grid-cols-3">
           {values.map((v) => (
-            <div key={v.n} className="flex min-h-[280px] flex-col justify-between rounded-sm border border-border bg-card p-8">
+            <div
+              key={v.n}
+              className="flex min-h-[280px] flex-col justify-between rounded-sm border border-border bg-card p-8"
+            >
               <span className="font-display text-5xl text-muted-foreground">{v.n}</span>
               <div>
                 <h3 className="font-display text-2xl">{v.title}</h3>
@@ -137,14 +164,14 @@ function About() {
         <div className="container-site py-24 md:py-32">
           <div className="grid gap-8 md:grid-cols-2 md:items-end">
             <div>
-              <SectionLabel index="03">Our People</SectionLabel>
+              <SectionLabel index="03">Tim Kami</SectionLabel>
               <h2 className="display-lg mt-6">
-                Excellence through <span className="italic">teamwork.</span>
+                Keunggulan melalui <span className="italic">kerja sama.</span>
               </h2>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:justify-self-end">
-              Our partners bring experience from leading international firms, in-house legal teams and the bench —
-              united by a shared standard of care.
+              Para rekan kami berpengalaman di firma hukum internasional terkemuka, tim hukum
+              internal, maupun pengadilan — dengan komitmen yang sama terhadap mutu layanan.
             </p>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -170,8 +197,10 @@ function About() {
           </div>
           <div className="mt-6 flex flex-col justify-between gap-6 rounded-sm bg-primary p-8 text-primary-foreground md:flex-row md:items-center">
             <div>
-              <h3 className="font-display text-3xl">Join our team</h3>
-              <p className="mt-2 text-sm opacity-75">We're always glad to meet exceptional lawyers and graduates.</p>
+              <h3 className="font-display text-3xl">Bergabung dengan tim kami</h3>
+              <p className="mt-2 text-sm opacity-75">
+                Kami selalu terbuka untuk bertemu advokat dan lulusan berprestasi.
+              </p>
             </div>
             <Button asChild variant="accent" size="lg" className="w-fit">
               <a href="mailto:careers@fazripartners.com">
@@ -184,12 +213,15 @@ function About() {
 
       <section className="container-site grid gap-12 py-24 md:py-32 lg:grid-cols-[1fr_2fr]">
         <div>
-          <SectionLabel index="04">Milestones</SectionLabel>
-          <h2 className="display-md mt-6">Twenty-two years in brief.</h2>
+          <SectionLabel index="04">Tonggak Perjalanan</SectionLabel>
+          <h2 className="display-md mt-6">Dua puluh dua tahun perjalanan kami.</h2>
         </div>
         <ol className="border-t border-border">
           {milestones.map((m) => (
-            <li key={m.year} className="grid grid-cols-[5rem_minmax(0,1fr)] gap-6 border-b border-border py-7 md:grid-cols-[8rem_minmax(0,1fr)]">
+            <li
+              key={m.year}
+              className="grid grid-cols-[5rem_minmax(0,1fr)] gap-6 border-b border-border py-7 md:grid-cols-[8rem_minmax(0,1fr)]"
+            >
               <span className="font-display text-3xl">{m.year}</span>
               <p className="pt-2 text-sm leading-relaxed text-muted-foreground">{m.text}</p>
             </li>
@@ -199,14 +231,16 @@ function About() {
 
       <section className="bg-ink text-ink-foreground">
         <div className="container-site py-24 text-center md:py-32">
-          <p className="eyebrow text-ink-muted">Client voice</p>
-          <blockquote className="display-md mx-auto mt-8 max-w-4xl">“{testimonials[1]!.quote}”</blockquote>
+          <p className="eyebrow text-ink-muted">Kata Klien</p>
+          <blockquote className="display-md mx-auto mt-8 max-w-4xl">
+            “{testimonials[1]!.quote}”
+          </blockquote>
           <p className="mt-8 text-sm text-ink-muted">
             {testimonials[1]!.name} — {testimonials[1]!.company}
           </p>
           <ConsultationDialog>
             <Button variant="outlineLight" size="lg" className="mt-10">
-              Work with us <ArrowUpRight />
+              Bekerja bersama kami <ArrowUpRight />
             </Button>
           </ConsultationDialog>
         </div>

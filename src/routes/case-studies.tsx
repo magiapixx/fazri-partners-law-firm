@@ -11,15 +11,17 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — Fazri & Partners" },
+      { title: "Studi Kasus — Fazri & Partners" },
       {
         name: "description",
-        content: "Selected transactions, arbitrations and restructurings handled by Fazri & Partners.",
+        content:
+          "Pilihan transaksi, arbitrase, dan restrukturisasi yang ditangani Fazri & Partners.",
       },
-      { property: "og:title", content: "Case Studies — Fazri & Partners" },
+      { property: "og:title", content: "Studi Kasus — Fazri & Partners" },
       {
         property: "og:description",
-        content: "Selected transactions, arbitrations and restructurings handled by Fazri & Partners.",
+        content:
+          "Pilihan transaksi, arbitrase, dan restrukturisasi yang ditangani Fazri & Partners.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,38 +30,48 @@ export const Route = createFileRoute("/case-studies")({
   component: CaseStudies,
 });
 
-const filters = ["All", ...practices.map((p) => p.title)];
+const filters = [
+  { label: "Semua", value: "Semua" },
+  ...practices.map((p) => ({ label: p.title, value: p.title })),
+];
 
 function CaseStudies() {
-  const [active, setActive] = useState("All");
-  const list = active === "All" ? caseStudies : caseStudies.filter((c) => c.practice === active);
+  const [active, setActive] = useState("Semua");
+  const list = active === "Semua" ? caseStudies : caseStudies.filter((c) => c.practice === active);
   const [featured, ...rest] = list;
 
   return (
     <>
       <PageHero
         image={stairs}
-        eyebrow="Case studies"
+        eyebrow="Studi Kasus"
         title={
           <>
-            Real matters, <span className="italic">real outcomes.</span>
+            Perkara nyata, <span className="italic">hasil nyata.</span>
           </>
         }
       >
-        <p>A selection of mandates we can share. Client names are withheld to respect our duty of confidentiality.</p>
+        <p>
+          Berikut beberapa penugasan yang dapat kami bagikan. Nama klien dirahasiakan untuk menjaga
+          kewajiban kerahasiaan kami.
+        </p>
       </PageHero>
 
       <section className="container-site py-20 md:py-28">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <SectionLabel>{list.length} matters</SectionLabel>
-          <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter by practice">
+          <SectionLabel>{list.length} perkara</SectionLabel>
+          <div
+            className="flex flex-wrap gap-2"
+            role="tablist"
+            aria-label="Saring berdasarkan bidang layanan"
+          >
             {filters.map((f) => (
               <button
-                key={f}
+                key={f.value}
                 type="button"
                 role="tab"
-                aria-selected={active === f}
-                onClick={() => setActive(f)}
+                aria-selected={active === f.value}
+                onClick={() => setActive(f.value)}
                 className={cn(
                   "rounded-full border px-4 py-2 text-xs tracking-wide transition-colors",
                   active === f
@@ -67,7 +79,7 @@ function CaseStudies() {
                     : "border-border text-muted-foreground hover:border-primary hover:text-foreground",
                 )}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </div>
@@ -95,11 +107,11 @@ function CaseStudies() {
                 <p className="mt-5 text-sm leading-relaxed opacity-75">{featured.summary}</p>
                 <dl className="mt-10 grid gap-6 border-t border-primary-foreground/20 pt-6 sm:grid-cols-2">
                   <div>
-                    <dt className="eyebrow opacity-60">Client</dt>
+                    <dt className="eyebrow opacity-60">Klien</dt>
                     <dd className="mt-2 text-sm">{featured.client}</dd>
                   </div>
                   <div>
-                    <dt className="eyebrow opacity-60">Outcome</dt>
+                    <dt className="eyebrow opacity-60">Hasil</dt>
                     <dd className="mt-2 font-display text-xl text-accent">{featured.outcome}</dd>
                   </div>
                 </dl>
@@ -110,7 +122,10 @@ function CaseStudies() {
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {rest.map((c) => (
-            <article key={c.slug} className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card">
+            <article
+              key={c.slug}
+              className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card"
+            >
               <div className="aspect-[16/10] overflow-hidden">
                 <img
                   src={c.image}
@@ -130,7 +145,7 @@ function CaseStudies() {
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.summary}</p>
                 <div className="mt-auto flex items-end justify-between gap-6 border-t border-border pt-6 [margin-top:max(2rem,auto)]">
                   <div>
-                    <p className="eyebrow text-muted-foreground">Outcome</p>
+                    <p className="eyebrow text-muted-foreground">Hasil</p>
                     <p className="mt-2 font-display text-lg">{c.outcome}</p>
                   </div>
                   <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />

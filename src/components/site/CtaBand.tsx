@@ -11,7 +11,7 @@ export function CtaBand() {
         <div className="relative isolate flex min-h-[420px] flex-col justify-between p-8 md:p-12">
           <img
             src={boardroom}
-            alt="Fazri & Partners lawyers in a meeting"
+            alt="Para advokat Fazri & Partners sedang berdiskusi"
             loading="lazy"
             width={1600}
             height={1072}
@@ -19,22 +19,25 @@ export function CtaBand() {
           />
           <div className="bg-side-overlay absolute inset-0 -z-10" />
           <div>
-            <p className="eyebrow text-ink-muted">Speak with an attorney</p>
+            <p className="eyebrow text-ink-muted">Berkonsultasi dengan advokat</p>
             <h2 className="display-md mt-5 max-w-md">
-              Your first consultation is <span className="italic">confidential</span> and without obligation.
+              Konsultasi pertama Anda <span className="italic">bersifat rahasia</span> dan tanpa
+              kewajiban.
             </h2>
           </div>
           <ul className="mt-10 space-y-3 text-sm">
-            {["Response within one business day", "Partner-led from the first meeting", "Bahasa Indonesia, English & Japanese"].map(
-              (t) => (
-                <li key={t} className="flex items-center gap-3">
-                  <Check className="h-4 w-4 shrink-0 text-accent" /> {t}
-                </li>
-              ),
-            )}
+            {[
+              "Respons dalam satu hari kerja",
+              "Didampingi rekan sejak pertemuan pertama",
+              "Bahasa Indonesia, Inggris & Jepang",
+            ].map((t) => (
+              <li key={t} className="flex items-center gap-3">
+                <Check className="h-4 w-4 shrink-0 text-accent" /> {t}
+              </li>
+            ))}
           </ul>
           <p className="mt-8 text-sm text-ink-muted">
-            Or call us directly — <span className="text-ink-foreground">{firm.phone}</span>
+            Atau hubungi kami langsung — <span className="text-ink-foreground">{firm.phone}</span>
           </p>
         </div>
         <div className="bg-card p-8 text-card-foreground md:p-12">

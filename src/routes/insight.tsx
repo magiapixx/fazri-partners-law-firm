@@ -13,15 +13,16 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/insight")({
   head: () => ({
     meta: [
-      { title: "Insight — Fazri & Partners" },
+      { title: "Wawasan — Fazri & Partners" },
       {
         name: "description",
-        content: "Legal analysis, regulatory updates and firm news on Indonesian law from Fazri & Partners.",
+        content:
+          "Analisis hukum, pembaruan regulasi, dan kabar firma mengenai hukum Indonesia dari Fazri & Partners.",
       },
-      { property: "og:title", content: "Insight — Fazri & Partners" },
+      { property: "og:title", content: "Wawasan — Fazri & Partners" },
       {
         property: "og:description",
-        content: "Legal analysis, regulatory updates and firm news on Indonesian law.",
+        content: "Analisis hukum, pembaruan regulasi, dan kabar firma mengenai hukum Indonesia.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -30,16 +31,23 @@ export const Route = createFileRoute("/insight")({
   component: InsightPage,
 });
 
-const categories: Array<"All" | Insight["category"]> = ["All", "Analysis", "Regulatory Update", "Firm News"];
+const categories: Array<"Semua" | Insight["category"]> = [
+  "Semua",
+  "Analisis",
+  "Pembaruan Regulasi",
+  "Kabar Firma",
+];
 
 function InsightPage() {
-  const [active, setActive] = useState<(typeof categories)[number]>("All");
-  const list = active === "All" ? insights : insights.filter((i) => i.category === active);
+  const [active, setActive] = useState<(typeof categories)[number]>("Semua");
+  const list = active === "Semua" ? insights : insights.filter((i) => i.category === active);
   const [featured, ...rest] = list;
 
   function subscribe(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    toast.success("You're subscribed.", { description: "Our next briefing will arrive in your inbox." });
+    toast.success("Anda berhasil berlangganan.", {
+      description: "Buletin kami berikutnya akan dikirim ke email Anda.",
+    });
     e.currentTarget.reset();
   }
 
@@ -47,20 +55,27 @@ function InsightPage() {
     <>
       <PageHero
         image={columns}
-        eyebrow="Insight"
+        eyebrow="Wawasan"
         title={
           <>
-            Perspectives on <span className="italic">Indonesian law.</span>
+            Perspektif tentang <span className="italic">hukum Indonesia.</span>
           </>
         }
       >
-        <p>Analysis, regulatory updates and news from our partners — written for decision-makers, not lawyers.</p>
+        <p>
+          Analisis, pembaruan regulasi, dan kabar dari para rekan kami — ditulis untuk pengambil
+          keputusan, bukan hanya praktisi hukum.
+        </p>
       </PageHero>
 
       <section className="container-site py-20 md:py-28">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <SectionLabel>Latest</SectionLabel>
-          <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter by category">
+          <SectionLabel>Terbaru</SectionLabel>
+          <div
+            className="flex flex-wrap gap-2"
+            role="tablist"
+            aria-label="Saring berdasarkan kategori"
+          >
             {categories.map((c) => (
               <button
                 key={c}
@@ -101,7 +116,7 @@ function InsightPage() {
                 <h2 className="display-md">{featured.title}</h2>
                 <p className="mt-5 text-sm leading-relaxed text-ink-muted">{featured.excerpt}</p>
                 <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink-border pt-6 text-xs text-ink-muted">
-                  <span>By {featured.author}</span>
+                  <span>Oleh {featured.author}</span>
                   <span>
                     {featured.date} · {featured.readTime}
                   </span>
@@ -131,37 +146,43 @@ function InsightPage() {
               <h3 className="mt-3 font-display text-2xl leading-snug">{a.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.excerpt}</p>
               <span className="mt-5 inline-flex items-center gap-2 border-b border-current pb-1 text-xs tracking-wide">
-                Read · {a.readTime} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                Baca · {a.readTime}{" "}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </span>
             </article>
           ))}
         </div>
-        {list.length === 0 && <p className="mt-12 text-muted-foreground">No articles in this category yet.</p>}
+        {list.length === 0 && (
+          <p className="mt-12 text-muted-foreground">Belum ada artikel dalam kategori ini.</p>
+        )}
       </section>
 
       <section className="container-site pb-24">
         <div className="grid gap-10 rounded-sm bg-accent p-8 text-accent-foreground md:p-14 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="eyebrow opacity-70">The Fazri Briefing</p>
+            <p className="eyebrow opacity-70">Buletin Fazri</p>
             <h2 className="display-md mt-5">
-              Monthly insight, <span className="italic">straight to your inbox.</span>
+              Wawasan bulanan, <span className="italic">langsung ke kotak masuk Anda.</span>
             </h2>
-            <p className="mt-4 text-sm opacity-75">Regulatory changes and market analysis. No noise, unsubscribe any time.</p>
+            <p className="mt-4 text-sm opacity-75">
+              Perubahan regulasi dan analisis pasar. Ringkas dan relevan; berhenti berlangganan
+              kapan saja.
+            </p>
           </div>
           <form onSubmit={subscribe} className="flex flex-col gap-3 sm:flex-row">
             <label htmlFor="newsletter-email" className="sr-only">
-              Email address
+              Alamat email
             </label>
             <Input
               id="newsletter-email"
               type="email"
               required
               maxLength={255}
-              placeholder="Your work email"
+              placeholder="Email kantor Anda"
               className="h-12 rounded-sm border-accent-foreground/30 bg-background"
             />
             <Button type="submit" variant="ink" size="lg">
-              Subscribe
+              Berlangganan
             </Button>
           </form>
         </div>

@@ -27,7 +27,11 @@ export function PageHero({
         className="animate-slow-zoom absolute inset-0 -z-20 h-full w-full object-cover"
       />
       <div className="bg-hero-overlay absolute inset-0 -z-10" />
-      <div className="container-site flex flex-col justify-end pt-32 pb-16 md:pb-24">
+      <div
+        className={`container-site flex flex-col justify-end pt-32 ${
+          tall ? "pb-8 md:pb-16" : "pb-16 md:pb-24"
+        }`}
+      >
         {eyebrow && <p className="eyebrow animate-rise mb-6 text-ink-muted">{eyebrow}</p>}
         <h1 className={`animate-rise max-w-4xl ${tall ? "display-xl" : "display-lg"}`}>{title}</h1>
         {children && (

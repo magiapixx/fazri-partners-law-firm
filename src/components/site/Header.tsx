@@ -30,11 +30,15 @@ export function Header() {
       )}
     >
       <div className="container-site grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-6 lg:grid-cols-[1fr_auto_1fr]">
-        <Link to="/" className="min-w-0 truncate font-display text-2xl tracking-tight" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="min-w-0 truncate font-display text-2xl tracking-tight"
+          onClick={() => setOpen(false)}
+        >
           Fazri <span className="italic">&amp;</span> Partners
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigasi utama">
           {navItems.map((item) => (
             <Link
               key={item.to}
@@ -50,14 +54,18 @@ export function Header() {
 
         <div className="flex items-center justify-end gap-3">
           <ConsultationDialog>
-            <Button variant={solid ? "ink" : "hero"} size="sm" className="hidden rounded-sm px-4 sm:inline-flex">
-              Book a Consultation
+            <Button
+              variant={solid ? "ink" : "hero"}
+              size="sm"
+              className="hidden rounded-sm px-4 sm:inline-flex"
+            >
+              Jadwalkan Konsultasi
             </Button>
           </ConsultationDialog>
           <button
             type="button"
             className="grid h-10 w-10 shrink-0 place-items-center lg:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? "Tutup menu" : "Buka menu"}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -67,7 +75,7 @@ export function Header() {
 
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
-          <nav className="container-site flex flex-col py-6" aria-label="Mobile">
+          <nav className="container-site flex flex-col py-6" aria-label="Navigasi seluler">
             {navItems.map((item) => (
               <Link
                 key={item.to}
@@ -82,7 +90,7 @@ export function Header() {
             ))}
             <ConsultationDialog>
               <Button variant="ink" size="lg" className="mt-6">
-                Book a Consultation
+                Jadwalkan Konsultasi
               </Button>
             </ConsultationDialog>
           </nav>

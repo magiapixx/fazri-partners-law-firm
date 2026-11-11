@@ -11,18 +11,18 @@ import sekar from "@/assets/team-sekar.jpg";
 
 export const firm = {
   name: "Fazri & Partners",
-  tagline: "Counsel with Conviction",
+  tagline: "Nasihat Hukum dengan Keyakinan",
   email: "counsel@fazripartners.com",
   phone: "+62 21 5080 1188",
   address: "Sequis Tower, 28th Floor, Jl. Jend. Sudirman Kav. 71, Jakarta 12190",
 };
 
 export const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/what-we-do", label: "What We Do" },
-  { to: "/case-studies", label: "Case Studies" },
-  { to: "/insight", label: "Insight" },
+  { to: "/", label: "Beranda" },
+  { to: "/about", label: "Tentang Kami" },
+  { to: "/what-we-do", label: "Layanan" },
+  { to: "/case-studies", label: "Studi Kasus" },
+  { to: "/insight", label: "Wawasan" },
 ] as const;
 
 export type Practice = {
@@ -36,91 +36,114 @@ export type Practice = {
 export const practices: Practice[] = [
   {
     slug: "corporate",
-    title: "Corporate & M&A",
+    title: "Korporasi & M&A",
     image: columns,
     summary:
-      "Structuring, negotiating and closing transactions that reshape businesses — from foreign direct investment to cross-border acquisitions.",
+      "Menyusun, menegosiasikan, dan menuntaskan transaksi yang membentuk ulang bisnis — mulai dari penanaman modal asing hingga akuisisi lintas negara.",
     services: [
-      "Mergers & acquisitions",
-      "Foreign direct investment (PMA)",
-      "Joint ventures",
-      "Corporate restructuring",
-      "Shareholder agreements",
+      "Merger & akuisisi",
+      "Penanaman modal asing (PMA)",
+      "Usaha patungan",
+      "Restrukturisasi perusahaan",
+      "Perjanjian pemegang saham",
     ],
   },
   {
     slug: "disputes",
-    title: "Litigation & Disputes",
+    title: "Litigasi & Sengketa",
     image: stairs,
     summary:
-      "Measured advocacy before Indonesian courts, BANI and international tribunals, built on preparation and an instinct for resolution.",
+      "Pendampingan terukur di hadapan pengadilan Indonesia, BANI, dan lembaga arbitrase internasional, berlandaskan persiapan matang dan strategi penyelesaian.",
     services: [
-      "Commercial litigation",
-      "Domestic & international arbitration",
-      "Bankruptcy & PKPU",
-      "White-collar defence",
-      "Enforcement of awards",
+      "Litigasi komersial",
+      "Arbitrase nasional & internasional",
+      "Kepailitan & PKPU",
+      "Pembelaan perkara tindak pidana korporasi",
+      "Pelaksanaan putusan arbitrase",
     ],
   },
   {
     slug: "finance",
-    title: "Banking & Finance",
+    title: "Perbankan & Keuangan",
     image: glass,
     summary:
-      "Advising lenders, sponsors and borrowers on financings, capital markets offerings and regulatory obligations under OJK and Bank Indonesia.",
+      "Memberikan nasihat kepada pemberi pinjaman, sponsor, dan debitur mengenai pembiayaan, penawaran pasar modal, serta kewajiban regulasi OJK dan Bank Indonesia.",
     services: [
-      "Syndicated & project finance",
-      "Capital markets & IPOs",
-      "Islamic finance",
-      "Fintech regulation",
-      "Debt restructuring",
+      "Pembiayaan sindikasi & proyek",
+      "Pasar modal & IPO",
+      "Keuangan syariah",
+      "Regulasi tekfin",
+      "Restrukturisasi utang",
     ],
   },
   {
     slug: "real-estate",
-    title: "Real Estate & Infrastructure",
+    title: "Properti & Infrastruktur",
     image: handshake,
     summary:
-      "Land acquisition, development and infrastructure work across the archipelago, from title due diligence to public–private partnerships.",
+      "Pendampingan pengadaan tanah, pengembangan, dan infrastruktur di seluruh Indonesia, mulai dari uji tuntas hak atas tanah hingga kemitraan pemerintah dan swasta.",
     services: [
-      "Land title & due diligence",
-      "Property development",
-      "PPP & infrastructure",
-      "Construction contracts",
-      "Energy & natural resources",
+      "Hak atas tanah & uji tuntas",
+      "Pengembangan properti",
+      "KPBU & infrastruktur",
+      "Kontrak konstruksi",
+      "Energi & sumber daya alam",
     ],
   },
 ];
 
 export const expertise = [
   {
-    group: "Business",
-    items: ["Corporate Governance", "Competition & Antitrust", "Employment", "Tax Advisory", "Intellectual Property"],
+    group: "Bisnis",
+    items: [
+      "Tata Kelola Perusahaan",
+      "Persaingan Usaha & Antimonopoli",
+      "Ketenagakerjaan",
+      "Konsultasi Pajak",
+      "Kekayaan Intelektual",
+    ],
   },
   {
-    group: "Regulatory",
-    items: ["Licensing & Permits", "Data Protection (PDP Law)", "Anti-Corruption", "Customs & Trade", "Environmental"],
+    group: "Regulasi",
+    items: [
+      "Perizinan",
+      "Pelindungan Data Pribadi (UU PDP)",
+      "Antikorupsi",
+      "Kepabeanan & Perdagangan",
+      "Lingkungan",
+    ],
   },
   {
-    group: "Private Client",
-    items: ["Family Wealth", "Succession Planning", "Trusts & Estates", "Family Business Disputes", "Philanthropy"],
+    group: "Klien Privat",
+    items: [
+      "Kekayaan Keluarga",
+      "Perencanaan Suksesi",
+      "Perwalian & Warisan",
+      "Sengketa Bisnis Keluarga",
+      "Filantropi",
+    ],
   },
 ];
 
 export const stats = [
-  { label: "Transactions advised", value: "Rp 48T+" },
-  { label: "Years of practice", value: "22" },
-  { label: "Lawyers & specialists", value: "60+" },
-  { label: "Cases resolved", value: "1,200+" },
+  { label: "Nilai transaksi yang ditangani", value: "Rp 48T+" },
+  { label: "Tahun pengalaman", value: "22" },
+  { label: "Advokat & spesialis", value: "60+" },
+  { label: "Perkara yang diselesaikan", value: "1.200+" },
 ];
 
 export type Person = { name: string; role: string; image: string; focus: string };
 
 export const team: Person[] = [
-  { name: "Fazri Ramadhan", role: "Founding & Managing Partner", image: fazri, focus: "Corporate & M&A" },
-  { name: "Anindya Kusuma", role: "Senior Partner", image: anindya, focus: "Litigation & Arbitration" },
-  { name: "Sekar Wulandari", role: "Partner", image: sekar, focus: "Banking & Islamic Finance" },
-  { name: "Raka Pratama", role: "Partner", image: raka, focus: "Real Estate & Infrastructure" },
+  {
+    name: "Fazri Ramadhan",
+    role: "Pendiri & Rekan Pengelola",
+    image: fazri,
+    focus: "Korporasi & M&A",
+  },
+  { name: "Anindya Kusuma", role: "Rekan Senior", image: anindya, focus: "Litigasi & Arbitrase" },
+  { name: "Sekar Wulandari", role: "Rekan", image: sekar, focus: "Perbankan & Keuangan Syariah" },
+  { name: "Raka Pratama", role: "Rekan", image: raka, focus: "Properti & Infrastruktur" },
 ];
 
 export type CaseStudy = {
@@ -137,67 +160,67 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "regional-telecom-acquisition",
-    practice: "Corporate & M&A",
-    title: "Guiding a US$420m acquisition of a regional telecom operator",
-    client: "Southeast Asian infrastructure fund",
-    outcome: "Closed in 7 months with full regulatory clearance",
+    practice: "Korporasi & M&A",
+    title: "Mendampingi akuisisi operator telekomunikasi regional senilai US$420 juta",
+    client: "Dana infrastruktur Asia Tenggara",
+    outcome: "Rampung dalam 7 bulan dengan seluruh persetujuan regulator",
     summary:
-      "We led due diligence, KPPU merger filing and negotiations across three jurisdictions, securing approval without remedies.",
+      "Kami memimpin uji tuntas, pengajuan notifikasi merger kepada KPPU, dan negosiasi di tiga yurisdiksi hingga memperoleh persetujuan tanpa syarat.",
     image: glass,
     year: "2025",
   },
   {
     slug: "bani-construction-award",
-    practice: "Litigation & Disputes",
-    title: "Securing a full award in a Rp 1.3 trillion construction arbitration",
-    client: "National EPC contractor",
-    outcome: "100% of claim awarded plus costs",
+    practice: "Litigasi & Sengketa",
+    title: "Memenangkan seluruh klaim dalam arbitrase konstruksi senilai Rp1,3 triliun",
+    client: "Kontraktor EPC nasional",
+    outcome: "Seluruh nilai klaim dikabulkan beserta biaya perkara",
     summary:
-      "Representing the contractor before BANI over delay and variation claims on a toll-road project, followed by successful enforcement.",
+      "Mewakili kontraktor di BANI dalam sengketa keterlambatan dan perubahan pekerjaan proyek jalan tol, dilanjutkan dengan keberhasilan pelaksanaan putusan.",
     image: stairs,
     year: "2024",
   },
   {
     slug: "sukuk-programme",
-    practice: "Banking & Finance",
-    title: "Structuring a debut green sukuk programme",
-    client: "Listed renewable energy company",
-    outcome: "Oversubscribed 2.4× on issuance",
+    practice: "Perbankan & Keuangan",
+    title: "Menyusun program sukuk hijau perdana",
+    client: "Perusahaan energi terbarukan tercatat di bursa",
+    outcome: "Penawaran mengalami kelebihan permintaan 2,4 kali",
     summary:
-      "Drafted the programme documentation, coordinated with DSN-MUI and OJK, and aligned the structure with green taxonomy standards.",
+      "Menyusun dokumen program, berkoordinasi dengan DSN-MUI dan OJK, serta menyelaraskan struktur dengan standar taksonomi hijau.",
     image: columns,
     year: "2024",
   },
   {
     slug: "industrial-estate-land",
-    practice: "Real Estate & Infrastructure",
-    title: "Consolidating 1,100 hectares for an industrial estate",
-    client: "Japanese–Indonesian joint venture",
-    outcome: "Clean title across 2,300 land parcels",
+    practice: "Properti & Infrastruktur",
+    title: "Konsolidasi 1.100 hektare lahan untuk kawasan industri",
+    client: "Usaha patungan Jepang–Indonesia",
+    outcome: "Kepastian hak atas 2.300 bidang tanah",
     summary:
-      "A multi-year land acquisition programme in Central Java, resolving overlapping claims and securing spatial-planning approvals.",
+      "Program pengadaan tanah multi-tahun di Jawa Tengah, menyelesaikan tumpang tindih klaim dan memperoleh persetujuan tata ruang.",
     image: skyline,
     year: "2023",
   },
   {
     slug: "family-business-succession",
-    practice: "Corporate & M&A",
-    title: "Resolving a three-generation family business succession",
-    client: "Family-owned FMCG group",
-    outcome: "Settled privately, without court proceedings",
+    practice: "Korporasi & M&A",
+    title: "Menyelesaikan suksesi bisnis keluarga lintas tiga generasi",
+    client: "Grup barang konsumsi milik keluarga",
+    outcome: "Diselesaikan secara kekeluargaan tanpa proses pengadilan",
     summary:
-      "Mediated shareholder tensions and restructured holdings into a governance framework accepted by all branches of the family.",
+      "Memediasi ketegangan antar pemegang saham dan menata ulang kepemilikan dalam kerangka tata kelola yang disepakati seluruh cabang keluarga.",
     image: boardroom,
     year: "2023",
   },
   {
     slug: "pkpu-restructuring",
-    practice: "Litigation & Disputes",
-    title: "Defending a manufacturer through PKPU proceedings",
-    client: "Textile manufacturer, 4,000 employees",
-    outcome: "Composition plan approved, operations preserved",
+    practice: "Litigasi & Sengketa",
+    title: "Mendampingi produsen dalam proses PKPU",
+    client: "Produsen tekstil dengan 4.000 karyawan",
+    outcome: "Rencana perdamaian disahkan dan usaha tetap beroperasi",
     summary:
-      "Negotiated with 140 creditors to secure a court-ratified restructuring plan that kept the business — and its workforce — intact.",
+      "Bernegosiasi dengan 140 kreditur untuk memperoleh rencana restrukturisasi yang disahkan pengadilan, sehingga usaha dan tenaga kerjanya tetap terjaga.",
     image: handshake,
     year: "2022",
   },
@@ -205,7 +228,7 @@ export const caseStudies: CaseStudy[] = [
 
 export type Insight = {
   slug: string;
-  category: "Analysis" | "Firm News" | "Regulatory Update";
+  category: "Analisis" | "Kabar Firma" | "Pembaruan Regulasi";
   title: string;
   excerpt: string;
   date: string;
@@ -217,67 +240,67 @@ export type Insight = {
 export const insights: Insight[] = [
   {
     slug: "omnibus-investment-2026",
-    category: "Analysis",
-    title: "What the 2026 Positive Investment List means for foreign investors",
+    category: "Analisis",
+    title: "Arti Daftar Prioritas Investasi 2026 bagi investor asing",
     excerpt:
-      "New sectors are opening to full foreign ownership. We unpack the opportunities — and the licensing traps that remain.",
-    date: "Nov 4, 2026",
-    readTime: "8 min read",
+      "Sejumlah sektor baru terbuka untuk kepemilikan asing penuh. Kami mengulas peluang dan hal-hal terkait perizinan yang perlu dicermati.",
+    date: "4 Nov 2026",
+    readTime: "8 menit baca",
     image: skyline,
     author: "Fazri Ramadhan",
   },
   {
     slug: "pdp-law-enforcement",
-    category: "Regulatory Update",
-    title: "The PDP Law two years on: enforcement priorities for boards",
+    category: "Pembaruan Regulasi",
+    title: "Dua tahun UU PDP: prioritas kepatuhan bagi direksi",
     excerpt:
-      "With the data protection authority now active, compliance has become a board-level matter. Here is where to start.",
-    date: "Oct 21, 2026",
-    readTime: "6 min read",
+      "Dengan aktifnya lembaga pelindungan data, kepatuhan kini menjadi agenda direksi. Berikut langkah awal yang dapat dilakukan.",
+    date: "21 Okt 2026",
+    readTime: "6 menit baca",
     image: glass,
     author: "Sekar Wulandari",
   },
   {
     slug: "anindya-senior-partner",
-    category: "Firm News",
-    title: "Anindya Kusuma named Senior Partner",
+    category: "Kabar Firma",
+    title: "Anindya Kusuma diangkat sebagai Rekan Senior",
     excerpt:
-      "Anindya will lead the firm's growing disputes practice, following a record year of arbitration mandates.",
-    date: "Oct 2, 2026",
-    readTime: "3 min read",
+      "Anindya akan memimpin praktik sengketa firma yang terus berkembang setelah setahun dengan jumlah penugasan arbitrase tertinggi.",
+    date: "2 Okt 2026",
+    readTime: "3 menit baca",
     image: boardroom,
     author: "Fazri & Partners",
   },
   {
     slug: "arbitration-seat-jakarta",
-    category: "Analysis",
-    title: "Choosing Jakarta as an arbitral seat: myths and realities",
+    category: "Analisis",
+    title: "Memilih Jakarta sebagai tempat kedudukan arbitrase: mitos dan fakta",
     excerpt:
-      "Recent Supreme Court decisions suggest Indonesian courts are becoming more arbitration-friendly. The data tells the story.",
-    date: "Sep 15, 2026",
-    readTime: "10 min read",
+      "Sejumlah putusan Mahkamah Agung menunjukkan pengadilan Indonesia kian mendukung arbitrase. Data mengungkap perkembangannya.",
+    date: "15 Sep 2026",
+    readTime: "10 menit baca",
     image: columns,
     author: "Anindya Kusuma",
   },
   {
     slug: "green-sukuk-guide",
-    category: "Regulatory Update",
-    title: "A practical guide to OJK's green sukuk framework",
+    category: "Pembaruan Regulasi",
+    title: "Panduan praktis kerangka sukuk hijau OJK",
     excerpt:
-      "Eligibility, use-of-proceeds reporting and the role of external reviewers — a checklist for first-time issuers.",
-    date: "Aug 28, 2026",
-    readTime: "7 min read",
+      "Persyaratan, pelaporan penggunaan dana, dan peran penelaah eksternal — daftar periksa bagi penerbit perdana.",
+    date: "28 Agu 2026",
+    readTime: "7 menit baca",
     image: handshake,
     author: "Sekar Wulandari",
   },
   {
     slug: "land-bank-reform",
-    category: "Analysis",
-    title: "Land Bank reform and the future of large-scale acquisitions",
+    category: "Analisis",
+    title: "Reformasi Bank Tanah dan masa depan pengadaan lahan skala besar",
     excerpt:
-      "How the Badan Bank Tanah is changing the way developers secure land — and what investors should watch.",
-    date: "Aug 9, 2026",
-    readTime: "9 min read",
+      "Bagaimana Badan Bank Tanah mengubah cara pengembang memperoleh lahan — dan hal-hal yang perlu diperhatikan investor.",
+    date: "9 Agu 2026",
+    readTime: "9 menit baca",
     image: stairs,
     author: "Raka Pratama",
   },
@@ -286,14 +309,14 @@ export const insights: Insight[] = [
 export const testimonials = [
   {
     quote:
-      "Fazri & Partners understood our business before they advised on it. Their judgement under pressure was the difference in closing the deal.",
-    name: "Chief Executive",
-    company: "Regional infrastructure fund",
+      "Fazri & Partners memahami bisnis kami sebelum memberikan nasihat. Pertimbangan mereka dalam situasi penuh tekanan menjadi penentu keberhasilan transaksi.",
+    name: "Direktur Utama",
+    company: "Dana infrastruktur regional",
   },
   {
     quote:
-      "Calm, exacting and always one step ahead. They turned a dispute we feared into a result we are proud of.",
-    name: "General Counsel",
-    company: "National EPC contractor",
+      "Tenang, cermat, dan selalu selangkah lebih maju. Mereka mengubah sengketa yang kami khawatirkan menjadi hasil yang membanggakan.",
+    name: "Kepala Divisi Hukum",
+    company: "Kontraktor EPC nasional",
   },
 ];
