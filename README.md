@@ -17,3 +17,5 @@ bun run dev
 - `bun run preview` - Preview the production build.
 - `bun run lint` - Run ESLint.
 - `bun run test` - Run tests.
+
+The production build is written to `dist/` using Nitro's Cloudflare module preset.
